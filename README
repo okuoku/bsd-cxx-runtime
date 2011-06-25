@@ -1,0 +1,48 @@
+libc++ / libcxxrt / libunwind For FreeBSD i386
+
+This is the (experimental) "Umbrella project" for BSD licensed C++ runtime stack.
+
+All projects are using CMake to generate Makefile.
+
+
+
+CURRENT STATUS
+--------------
+
+- <locale>s are broken, thus <iostream> won't work too.
+
+
+
+SETUP
+-----
+
+(clang prefix = /opt/llvm)
+
+ git submodule init
+ git submodule update
+ cmake -DCMAKE_C_COMPILER=/opt/llvm/bin/clang \
+ -DCMAKE_CXX_COMPILER=/opt/llvm/bin/clang++
+
+
+- You will need latest clang/clang++ to build them.
+
+
+
+INCLUDED PROJECTS
+-----------------
+
+libcxx
+- https://github.com/okuoku/libcxx
+(Patched to use libcxx implementation.)
+
+libcxxrt
+- https://github.com/pathscale/libcxxrt
+
+libunwind
+- https://github.com/okuoku/libunwind
+(Patched to build FreeBSD version.)
+
+Compiler-RT
+- http://llvm.org/git/compiler-rt.git
+
+
